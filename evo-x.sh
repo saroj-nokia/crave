@@ -79,7 +79,7 @@ echo ""
 # Build
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
-export BUILD_HOSTNAME=admin@DESKTOP-LBDQKV3
+export BUILD_HOSTNAME=T800-machine
 export ALLOW_MISSING_DEPENDENCIES=true; \
 breakfast sapphire user; \
 make installclean; \
