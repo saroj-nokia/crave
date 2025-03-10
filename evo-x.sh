@@ -69,9 +69,6 @@ git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm622
 rm -rf hardware/qcom-caf/sm6225/audio/primary-hal
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/hardware_qcom_audio.git hardware/qcom-caf/sm6225/audio/primary-hal
 
-rm -rf hardware/xiaomi
-git clone --depth 1 -b 15 https://github.com/sapphire-sm6225/hardware_xiaomi.git hardware/xiaomi
-
 rm -rf device/qcom/sepolicy_vndr/sm6225
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
 echo "============================"
