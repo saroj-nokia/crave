@@ -3,7 +3,7 @@
 rm -rf .repo/local_manifests/
 
 # ROM source repo
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
 echo "================="
 echo "Repo init success"
 echo "================="
