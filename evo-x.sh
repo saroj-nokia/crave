@@ -2,6 +2,8 @@
 
 rm -rf .repo/local_manifests/
 
+rm -rf hardware/qcom-caf/common
+
 # ROM source repo
 repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
 echo "================="
