@@ -40,7 +40,7 @@ echo ""
 
 
 # Clone modified evo update package
-git clone https://github.com/sapphire-sm6225/packages_apps_Updater.git -b vic packages/apps/Updater
+git clone https://github.com/sapphire-sm6225/packages_apps_Updater.git -b vic-qpr1 packages/apps/Updater
 echo "============================"
 echo "modified evo update package clone success"
 echo "============================"
