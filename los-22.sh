@@ -12,7 +12,7 @@ echo "================="
 echo ""
 
 # Clone local_manifests repository
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphireevo .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire15 .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
