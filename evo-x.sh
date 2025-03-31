@@ -5,22 +5,14 @@ rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 
 # ROM source repo
-repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-22.1 --git-lfs
 echo "================="
 echo "Repo init success"
 echo "================="
 echo ""
 
-# Remove modified update package
-
-rm -rf packages/apps/Updater
-echo "============================"
-echo "Remove modified update package success"
-echo "============================"
-echo ""
-
 # Clone local_manifests repository
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphireevo .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphirelos .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
@@ -28,21 +20,6 @@ echo ""
 
 # Sync the repositories
 /opt/crave/resync.sh
-echo "============================"
-echo ""
-
-# Remove default update package
-rm -rf packages/apps/Updater
-echo "============================"
-echo "Remove default update package success"
-echo "============================"
-echo ""
-
-
-# Clone modified evo update package
-git clone https://github.com/sapphire-sm6225/packages_apps_Updater.git -b vic-qpr1 packages/apps/Updater
-echo "============================"
-echo "modified evo update package clone success"
 echo "============================"
 echo ""
 
@@ -85,4 +62,4 @@ export BUILD_HOSTNAME=T800-machine
 export ALLOW_MISSING_DEPENDENCIES=true
 breakfast sapphire user
 make installclean
-m evolution
+mka bacon
