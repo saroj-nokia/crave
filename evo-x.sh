@@ -5,7 +5,7 @@ rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 
 # ROM source repo
-repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
+repo init -u https://github.com/sapphire-sm6225/manifest -b vic-qpr1 --git-lfs
 echo "================="
 echo "Repo init success"
 echo "================="
