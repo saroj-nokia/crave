@@ -60,6 +60,7 @@ source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
 export BUILD_HOSTNAME=T800-machine
 export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 breakfast sapphire user
 make installclean
 mka bacon
