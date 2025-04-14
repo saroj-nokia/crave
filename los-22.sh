@@ -9,18 +9,12 @@ echo "Starting LineageOS Build Script"
 echo "==============================="
 echo ""
 
-# Check for necessary dependencies
-for cmd in git repo mka curl; do
-    command -v $cmd >/dev/null 2>&1 || { echo "$cmd is not installed. Exiting."; exit 1; }
-done
-
-# Clean up if specified
-if [ "$1" == "--clean" ]; then
-    echo "Performing cleanup..."
-    rm -rf .repo/local_manifests/
-    rm -rf hardware/qcom-caf/common
-    echo "Cleanup completed."
-fi
+# Automatic cleanup
+echo "Performing cleanup..."
+rm -rf .repo/local_manifests/
+rm -rf hardware/qcom-caf/common
+echo "Cleanup completed."
+echo ""
 
 # Initialize the ROM source repository
 repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
@@ -120,7 +114,7 @@ echo "============================"
 
 # Upload ROM zip file to PixelDrain
 ROM_DIR="out/target/product/sapphire/"
-ROM_NAME=$(ls $ROM_DIR | grep "lineage-22.2-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1) # Strictly match .zip files
+ROM_NAME=$(ls $ROM_DIR | grep "lineage-22.2-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1)
 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
@@ -137,4 +131,4 @@ fi
 
 echo "============================"
 echo "Script completed!"
-echo "============================"F
+echo "============================"
