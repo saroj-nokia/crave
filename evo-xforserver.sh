@@ -14,6 +14,7 @@ echo ""
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
+rm -rf packages/apps/Updater
 echo "Cleanup completed."
 echo ""
 
@@ -47,6 +48,20 @@ if [ $? -ne 0 ]; then
 fi
 echo "============================"
 echo "Repo sync success"
+echo "============================"
+echo ""
+
+# Automatic cleanup
+echo "Performing cleanup..."
+rm -rf packages/apps/Updater
+echo "Cleanup completed."
+echo ""
+
+# Clone modified evo update package
+echo "Clone modified evo updater package"
+git clone https://github.com/sapphire-sm6225/packages_apps_Updater.git -b vic packages/apps/Updater
+echo "============================"
+echo "modified evo update package clone success"
 echo "============================"
 echo ""
 
