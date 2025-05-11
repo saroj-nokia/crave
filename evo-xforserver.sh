@@ -118,7 +118,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-mka bacon
+m evolution
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."
     exit 1
