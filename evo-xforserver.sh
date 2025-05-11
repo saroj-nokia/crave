@@ -40,7 +40,7 @@ echo "============================"
 echo ""
 
 # Sync the repositories using the Crave sync script
-repo sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 if [ $? -ne 0 ]; then
     echo "Repo sync failed. Exiting."
     exit 1
