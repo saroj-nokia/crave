@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# Enable logging
-exec > >(tee -i build_script.log) 2>&1
-exec 2>&1
-
-echo "==============================="
-echo "Starting LineageOS Build Script"
-echo "==============================="
-echo ""
-
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
