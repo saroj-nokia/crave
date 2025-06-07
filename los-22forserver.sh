@@ -136,5 +136,5 @@ else
 fi
 
 echo "============================"
-echo "Script completed!"
+echo "ROM uploaded successfully to PixelDrain!"
 echo "============================"
