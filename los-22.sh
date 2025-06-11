@@ -33,7 +33,7 @@ echo ""
 # Sync the repositories using the Crave sync script
 /opt/crave/resync.sh
 if [ $? -ne 0 ]; then
-    echo "Repo sync failed. Exiting."
+    echo "Crave sync failed. Exiting."
     exit 1
 fi
 echo "============================"
