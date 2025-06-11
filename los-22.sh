@@ -1,18 +1,10 @@
 #!/bin/bash
 
-# Enable logging
-exec > >(tee -i build_script.log) 2>&1
-exec 2>&1
-
-echo "==============================="
-echo "Starting LineageOS Build Script"
-echo "==============================="
-echo ""
-
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
+rm -rf packages/apps/Updater
 echo "Cleanup completed."
 echo ""
 
@@ -41,11 +33,25 @@ echo ""
 # Sync the repositories using the Crave sync script
 /opt/crave/resync.sh
 if [ $? -ne 0 ]; then
-    echo "Crave sync failed. Exiting."
+    echo "Repo sync failed. Exiting."
     exit 1
 fi
 echo "============================"
 echo "Crave sync success"
+echo "============================"
+echo ""
+
+# Automatic cleanup
+echo "Performing cleanup..."
+rm -rf packages/apps/Updater
+echo "Cleanup completed."
+echo ""
+
+# Clone modified evo update package
+echo "Clone modified evo updater package"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
+echo "============================"
+echo "modified lineage update package clone success"
 echo "============================"
 echo ""
 
