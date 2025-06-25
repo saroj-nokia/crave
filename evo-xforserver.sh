@@ -4,12 +4,11 @@
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
-rm -rf packages/apps/Updater
 echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -20,7 +19,7 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphireevo .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire15 .repo/local_manifests
 if [ $? -ne 0 ]; then
     echo "Failed to clone local manifests. Exiting."
     exit 1
@@ -38,20 +37,6 @@ if [ $? -ne 0 ]; then
 fi
 echo "============================"
 echo "Repo sync success"
-echo "============================"
-echo ""
-
-# Automatic cleanup
-echo "Performing cleanup..."
-rm -rf packages/apps/Updater
-echo "Cleanup completed."
-echo ""
-
-# Clone modified evo update package
-echo "Clone modified evo updater package"
-git clone https://github.com/sapphire-sm6225/packages_apps_Updater.git -b vic packages/apps/Updater
-echo "============================"
-echo "modified evo update package clone success"
 echo "============================"
 echo ""
 
