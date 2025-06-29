@@ -63,6 +63,9 @@ git clone --depth 1 -b lineage-22.2 https://github.com/sapphire-sm6225/android_h
 rm -rf hardware/qcom-caf/sm6225/audio/agm
 git clone --depth 1 -b lineage-22.2-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_agm.git hardware/qcom-caf/sm6225/audio/agm
 
+rm -rf hardware/qcom-caf/sm6225/audio/graphservices
+git clone --depth 1 -b lineage-22.2-caf-sm6225 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_audioreach-graphservices hardware/qcom-caf/sm6225/audio/graphservices
+
 rm -rf hardware/qcom-caf/sm6225/audio/pal
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_arpal-lx.git hardware/qcom-caf/sm6225/audio/pal
 
