@@ -48,7 +48,7 @@ echo "Cleanup completed."
 echo ""
 
 # Clone modified evo update package
-echo "Clone modified evo updater package"
+echo "Clone modified lineage updater package"
 git clone https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
 echo "============================"
 echo "modified lineage update package clone success"
