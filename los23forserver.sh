@@ -8,7 +8,7 @@ echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -30,7 +30,7 @@ echo "============================"
 echo ""
 
 # Sync the repositories using the Crave sync script
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync --force-sync
 if [ $? -ne 0 ]; then
     echo "Repo sync failed. Exiting."
     exit 1
@@ -81,7 +81,7 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 # Build the ROM
-breakfast sapphire user
+breakfast sapphire userdebug
 if [ $? -ne 0 ]; then
     echo "Breakfast failed. Exiting."
     exit 1
@@ -93,7 +93,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-m evolution
+mka bacon
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."
     exit 1
