@@ -94,6 +94,7 @@ export BUILD_USERNAME=sarojtaj77
 export BUILD_HOSTNAME=T800-machine
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export BUILD_BROKEN_SRC_DIR_IS_WRITABLE=true
 
 # Build the ROM
 breakfast sapphire user
