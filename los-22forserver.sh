@@ -31,7 +31,7 @@ echo "============================"
 echo ""
 
 # Sync the repositories using the Crave sync script
-repo sync  -j8 --force-sync
+repo sync  -j14 --force-sync
 if [ $? -ne 0 ]; then
     echo "Repo sync failed. Exiting."
     exit 1
