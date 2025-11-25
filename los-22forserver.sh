@@ -2,6 +2,7 @@
 
 # Automatic cleanup
 echo "Performing cleanup..."
+rm -rf hardware/qcom-caf/bootctrl
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
