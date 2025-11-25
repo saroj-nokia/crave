@@ -2,7 +2,6 @@
 
 # Automatic cleanup
 echo "Performing cleanup..."
-rm -rf hardware/qcom-caf/bootctrl
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
@@ -84,9 +83,6 @@ git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm622
 
 rm -rf device/qcom/sepolicy_vndr/sm6225
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
-
-rm -rf hardware/qcom-caf/bootctrl
-git clone --depth 1 -b lineage-22.2-caf https://github.com/sapphire-sm6225/android_hardware_qcom_bootctrl.git hardware/qcom-caf/bootctrl
 echo "============================"
 echo "Cloning HALs completed"
 echo "============================"
