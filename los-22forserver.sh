@@ -5,6 +5,7 @@ echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
+rm -rf packages/apps/ThemePicker
 echo "Cleanup completed."
 echo ""
 
@@ -44,14 +45,23 @@ echo ""
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf packages/apps/Updater
+rm -rf packages/apps/ThemePicker
 echo "Cleanup completed."
 echo ""
 
-# Clone modified evo update package
-echo "Clone modified lineage updater package"
+# Clone modified lineage updater repo
+echo "Clone modified lineage updater repo"
 git clone https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
 echo "============================"
-echo "modified lineage update package clone success"
+echo "modified lineage updater repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage ThemePicke repo
+echo "Clone modified lineage ThemePicker repo"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-22.2 packages/apps/ThemePicker
+echo "============================"
+echo "modified lineage ThemePicker repo clone success"
 echo "============================"
 echo ""
 
