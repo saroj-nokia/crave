@@ -67,11 +67,11 @@ echo "modified lineage ThemePicker repo clone success"
 echo "============================"
 echo ""
 
-# Clone modified lineage settings repo
-echo "Clone modified lineage ThemePicker repo"
+# Clone modified lineage Settings repo
+echo "Clone modified lineage Settings repo"
 git clone https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
 echo "============================"
-echo "modified lineage ThemePicker repo clone success"
+echo "modified lineage Settings repo clone success"
 echo "============================"
 echo ""
 
