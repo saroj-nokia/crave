@@ -7,6 +7,7 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
+rm -rf packages/apps/AudioFX
 echo "Cleanup completed."
 echo ""
 
@@ -48,6 +49,7 @@ echo "Performing cleanup..."
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
+rm -rf packages/apps/AudioFX
 echo "Cleanup completed."
 echo ""
 
