@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Automatic cleanup
