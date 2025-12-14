@@ -3,10 +3,6 @@
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
-rm -rf hardware/qcom-caf/common
-rm -rf packages/apps/Updater
-rm -rf packages/apps/ThemePicker
-rm -rf packages/apps/Settings
 echo "Cleanup completed."
 echo ""
 
@@ -22,7 +18,7 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire15 .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests.git -b lineage-20-rosy .repo/local_manifests
 if [ $? -ne 0 ]; then
     echo "Failed to clone local manifests. Exiting."
     exit 1
@@ -43,71 +39,6 @@ echo "Repo sync success"
 echo "============================"
 echo ""
 
-# Automatic cleanup
-echo "Performing cleanup..."
-rm -rf packages/apps/Updater
-rm -rf packages/apps/ThemePicker
-rm -rf packages/apps/Settings
-echo "Cleanup completed."
-echo ""
-
-# Clone modified lineage updater repo
-echo "Clone modified lineage updater repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
-echo "============================"
-echo "modified lineage updater repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified lineage ThemePicke repo
-echo "Clone modified lineage ThemePicker repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-22.2 packages/apps/ThemePicker
-echo "============================"
-echo "modified lineage ThemePicker repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified lineage Settings repo
-echo "Clone modified lineage Settings repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
-echo "============================"
-echo "modified lineage Settings repo clone success"
-echo "============================"
-echo ""
-
-# Clone HALs for SM6225
-echo "Cloning HALs for SM6225..."
-rm -rf hardware/qcom-caf/common
-git clone --depth 1 -b lineage-22.2 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
-
-rm -rf hardware/qcom-caf/sm6225/audio/agm
-git clone --depth 1 -b lineage-22.2-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_agm.git hardware/qcom-caf/sm6225/audio/agm
-
-rm -rf hardware/qcom-caf/sm6225/audio/pal
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_arpal-lx.git hardware/qcom-caf/sm6225/audio/pal
-
-rm -rf hardware/qcom-caf/sm6225/data-ipa-cfg-mgr
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_data-ipa-cfg-mgr.git hardware/qcom-caf/sm6225/data-ipa-cfg-mgr
-
-rm -rf hardware/qcom-caf/sm6225/dataipa
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_dataipa.git hardware/qcom-caf/sm6225/dataipa
-
-rm -rf hardware/qcom-caf/sm6225/display
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/hardware_qcom_display.git hardware/qcom-caf/sm6225/display
-
-rm -rf hardware/qcom-caf/sm6225/media
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/hardware_qcom_media.git hardware/qcom-caf/sm6225/media
-
-rm -rf hardware/qcom-caf/sm6225/audio/primary-hal
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/hardware_qcom_audio.git hardware/qcom-caf/sm6225/audio/primary-hal
-
-rm -rf device/qcom/sepolicy_vndr/sm6225
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
-echo "============================"
-echo "Cloning HALs completed"
-echo "============================"
-echo ""
-
 # Build environment setup
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
@@ -116,7 +47,7 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 # Build the ROM
-breakfast sapphire user
+breakfast rosy user
 if [ $? -ne 0 ]; then
     echo "Breakfast failed. Exiting."
     exit 1
@@ -139,8 +70,8 @@ echo "Build process completed successfully!"
 echo "============================"
 
 # Upload ROM zip file to PixelDrain
-ROM_DIR="out/target/product/sapphire/"
-ROM_NAME=$(ls $ROM_DIR | grep "lineage-22.2-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1)
+ROM_DIR="out/target/product/rosy/"
+ROM_NAME=$(ls $ROM_DIR | grep "lineage-20.0-.*-UNOFFICIAL-rosy.zip$" | tail -n 1)
 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
