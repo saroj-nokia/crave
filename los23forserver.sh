@@ -79,6 +79,7 @@ export BUILD_USERNAME=sarojtaj77
 export BUILD_HOSTNAME=T800-machine
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export SKIP_ABI_CHECKS=true
 
 # Build the ROM
 breakfast sapphire userdebug
