@@ -8,7 +8,7 @@ echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.1 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -43,7 +43,7 @@ echo ""
 # Clone HALs for SM6225
 echo "Cloning HALs for SM6225..."
 rm -rf hardware/qcom-caf/common
-git clone --depth 1 -b lineage-23.1 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
+git clone --depth 1 -b lineage-23.0 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
 
 rm -rf hardware/qcom-caf/sm6225/audio/agm
 git clone --depth 1 -b lineage-22.2-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_agm.git hardware/qcom-caf/sm6225/audio/agm
