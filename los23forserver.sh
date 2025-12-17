@@ -19,7 +19,7 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire15 .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire16 .repo/local_manifests
 if [ $? -ne 0 ]; then
     echo "Failed to clone local manifests. Exiting."
     exit 1
@@ -80,6 +80,7 @@ export BUILD_HOSTNAME=T800-machine
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export SKIP_ABI_CHECKS=true
+mkdir -p out/target/product/sapphire/obj/KERNEL_OBJ/usr
 
 # Build the ROM
 breakfast sapphire userdebug
