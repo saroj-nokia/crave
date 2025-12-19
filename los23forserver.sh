@@ -83,7 +83,7 @@ export SKIP_ABI_CHECKS=true
 mkdir -p out/target/product/sapphire/obj/KERNEL_OBJ/usr
 
 # Build the ROM
-breakfast sapphire userdebug
+breakfast sapphire user
 if [ $? -ne 0 ]; then
     echo "Breakfast failed. Exiting."
     exit 1
