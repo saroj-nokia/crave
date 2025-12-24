@@ -7,6 +7,7 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
+rm -rf vendor/qcom/opensource/healthd-ext
 echo "Cleanup completed."
 echo ""
 
@@ -103,6 +104,9 @@ git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm622
 
 rm -rf device/qcom/sepolicy_vndr/sm6225
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
+
+rm -rf vendor/qcom/opensource/healthd-ext
+git clone --depth 1 -b lineage-22.2 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_healthd-ext.git vendor/qcom/opensource/healthd-ext
 echo "============================"
 echo "Cloning HALs completed"
 echo "============================"
