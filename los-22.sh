@@ -80,19 +80,19 @@ echo "modified lineage Settings repo clone success"
 echo "============================"
 echo ""
 
-# Clone modified no audio tonhtone while bluetooth connect repo
-echo "Clone modified no audio tonhtone while bluetooth connect repo"
+# Clone modified no audio ringtone while bluetooth connect repo
+echo "Clone modified no audio ringtone while bluetooth connect repo"
 git clone https://github.com/sapphire-sm6225/android_system_media.git -b lineage-22.2 system/media
 echo "============================"
-echo "modified lineage no audio tonhtone while bluetooth connect repo clone success"
+echo "modified lineage fix no audio ringtone while bluetooth connect repo clone success"
 echo "============================"
 echo ""
 
-# Clone modified no audio tonhtone while bluetooth connect repo
-echo "Clone modified no audio tonhtone while bluetooth connect repo"
+# Clone modified no audio ringtone while bluetooth connect repo
+echo "Clone modified no audio ringtone while bluetooth connect repo"
 git clone https://github.com/sapphire-sm6225/android_hardware_interfaces.git -b lineage-22.2 hardware/interfaces
 echo "============================"
-echo "modified lineage no audio tonhtone while bluetooth connect repo clone success"
+echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
 echo "============================"
 echo ""
 
@@ -180,5 +180,5 @@ else
 fi
 
 echo "============================"
-echo "ROM uploaded successfully to PixelDrain!"
+echo "ROM uploaded successfull"
 echo "============================"
