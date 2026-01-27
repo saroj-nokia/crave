@@ -84,7 +84,7 @@ echo ""
 echo "Clone modified no audio ringtone while bluetooth connect repo"
 git clone https://github.com/sapphire-sm6225/android_system_media.git -b lineage-22.2 system/media
 echo "============================"
-echo "modified lineage fix no audio ringtone while bluetooth connect repo clone success"
+echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
 echo "============================"
 echo ""
 
@@ -136,8 +136,6 @@ echo ""
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
 export BUILD_HOSTNAME=T800-machine
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 # Build the ROM
 breakfast sapphire user
