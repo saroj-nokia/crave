@@ -10,6 +10,7 @@ rm -rf packages/apps/Settings
 rm -rf vendor/qcom/opensource/healthd-ext
 rm -rf system/media
 rm -rf hardware/interfaces
+rm -rf vendor/lineage
 echo "Cleanup completed."
 echo ""
 
@@ -53,6 +54,7 @@ rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
 rm -rf system/media
 rm -rf hardware/interfaces
+rm -rf vendor/lineage
 echo "Cleanup completed."
 echo ""
 
@@ -93,6 +95,14 @@ echo "Clone modified no audio ringtone while bluetooth connect repo"
 git clone https://github.com/sapphire-sm6225/android_hardware_interfaces.git -b lineage-22.2 hardware/interfaces
 echo "============================"
 echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage vendor
+echo "Clone modified lineage vendor repo"
+git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
+echo "============================"
+echo "modified lineage vendor repo clone success"
 echo "============================"
 echo ""
 
