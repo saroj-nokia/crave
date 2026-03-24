@@ -7,7 +7,6 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
-rm -rf packages/apps/Trebuchet
 rm -rf vendor/qcom/opensource/healthd-ext
 rm -rf system/media
 rm -rf hardware/interfaces
@@ -53,7 +52,6 @@ echo "Performing cleanup..."
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
-rm -rf packages/apps/Trebuchet
 rm -rf system/media
 rm -rf hardware/interfaces
 rm -rf vendor/lineage
@@ -81,14 +79,6 @@ echo "Clone modified lineage Settings repo"
 git clone https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
 echo "============================"
 echo "modified lineage Settings repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified lineage Trebuchet repo
-echo "Clone modified lineage Trebuchet repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Trebuchet -b lineage-22.2 packages/apps/Trebuchet
-echo "============================"
-echo "modified lineage Trebuchet repo clone success"
 echo "============================"
 echo ""
 
