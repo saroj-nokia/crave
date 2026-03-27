@@ -4,8 +4,6 @@
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
-rm -rf system/media
-rm -rf hardware/interfaces
 rm -rf vendor/qcom/opensource/healthd-ext
 echo "Cleanup completed."
 echo ""
@@ -40,29 +38,6 @@ if [ $? -ne 0 ]; then
 fi
 echo "============================"
 echo "Repo sync success"
-echo "============================"
-echo ""
-
-# Automatic cleanup
-echo "Performing cleanup..."
-rm -rf system/media
-rm -rf hardware/interfaces
-echo "Cleanup completed."
-echo ""
-
-# Clone modified no audio ringtone while bluetooth connect repo
-echo "Clone modified no audio ringtone while bluetooth connect repo"
-git clone https://github.com/sapphire-sm6225/android_system_media.git -b lineage-22.2 system/media
-echo "============================"
-echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified no audio ringtone while bluetooth connect repo
-echo "Clone modified no audio ringtone while bluetooth connect repo"
-git clone https://github.com/sapphire-sm6225/android_hardware_interfaces.git -b lineage-22.2 hardware/interfaces
-echo "============================"
-echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
 echo "============================"
 echo ""
 
