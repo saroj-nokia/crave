@@ -4,6 +4,8 @@
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
+rm -rf system/media
+rm -rf hardware/interfaces
 echo "Cleanup completed."
 echo ""
 
