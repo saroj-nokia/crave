@@ -10,7 +10,7 @@ echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/sapphire-sm6225/manifest -b vic --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
