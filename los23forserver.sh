@@ -9,7 +9,7 @@ echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -44,7 +44,7 @@ echo ""
 # Clone HALs for SM6225
 echo "Cloning HALs for SM6225..."
 rm -rf hardware/qcom-caf/common
-git clone --depth 1 -b lineage-23.0 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
+git clone --depth 1 -b lineage-23.2 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
 
 rm -rf hardware/qcom-caf/sm6225/audio/agm
 git clone --depth 1 -b lineage-22.2-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_agm.git hardware/qcom-caf/sm6225/audio/agm
@@ -71,7 +71,7 @@ rm -rf device/qcom/sepolicy_vndr/sm6225
 git clone --depth 1 -b lineage-23.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
 
 rm -rf vendor/qcom/opensource/healthd-ext
-git clone --depth 1 -b lineage-23.0 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_healthd-ext.git vendor/qcom/opensource/healthd-ext
+git clone --depth 1 -b lineage-23.2 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_healthd-ext.git vendor/qcom/opensource/healthd-ext
 echo "============================"
 echo "Cloning HALs completed"
 echo "============================"
@@ -81,8 +81,6 @@ echo ""
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
 export BUILD_HOSTNAME=T800-machine
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export SKIP_ABI_CHECKS=true
 mkdir -p out/target/product/sapphire/obj/KERNEL_OBJ/usr
 
@@ -111,7 +109,7 @@ echo "============================"
 
 # Upload ROM zip file to PixelDrain
 ROM_DIR="out/target/product/sapphire/"
-ROM_NAME=$(ls $ROM_DIR | grep "ineage-23.0-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1)
+ROM_NAME=$(ls $ROM_DIR | grep "ineage-23.2-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1)
 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
