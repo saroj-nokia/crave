@@ -4,7 +4,9 @@
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
+rm -rf packages/apps/ThemePicker
 rm -rf vendor/qcom/opensource/healthd-ext
+rm -rf vendor/lineage
 echo "Cleanup completed."
 echo ""
 
@@ -74,6 +76,29 @@ rm -rf vendor/qcom/opensource/healthd-ext
 git clone --depth 1 -b lineage-23.2 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_healthd-ext.git vendor/qcom/opensource/healthd-ext
 echo "============================"
 echo "Cloning HALs completed"
+echo "============================"
+echo ""
+
+# Automatic cleanup
+echo "Performing cleanup..."
+rm -rf packages/apps/ThemePicker
+rm -rf vendor/lineage
+echo "Cleanup completed."
+echo ""
+
+# Clone modified lineage ThemePicke repo
+echo "Clone modified lineage ThemePicker repo"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-23.2 packages/apps/ThemePicker
+echo "============================"
+echo "modified lineage ThemePicker repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage vendor
+echo "Clone modified lineage vendor repo"
+git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-23.2 vendor/lineage
+echo "============================"
+echo "modified lineage vendor repo clone success"
 echo "============================"
 echo ""
 
