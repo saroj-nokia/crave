@@ -1,24 +1,17 @@
 #!/bin/bash
 
-# Enable logging
-exec > >(tee -i build_script.log) 2>&1
-exec 2>&1
-
-echo "==============================="
-echo "Starting Evolution-x Build Script"
-echo "==============================="
-echo ""
-
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
-rm -rf packages/apps/Updater
+rm -rf packages/apps/ThemePicker
+rm -rf vendor/qcom/opensource/healthd-ext
+rm -rf vendor/lineage
 echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -29,7 +22,7 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphireevo .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire16 .repo/local_manifests
 if [ $? -ne 0 ]; then
     echo "Failed to clone local manifests. Exiting."
     exit 1
@@ -42,32 +35,18 @@ echo ""
 # Sync the repositories using the Crave sync script
 /opt/crave/resync.sh
 if [ $? -ne 0 ]; then
-    echo "Repo sync failed. Exiting."
+    echo "Crave sync failed. Exiting."
     exit 1
 fi
 echo "============================"
-echo "Repo sync success"
-echo "============================"
-echo ""
-
-# Automatic cleanup
-echo "Performing cleanup..."
-rm -rf packages/apps/Updater
-echo "Cleanup completed."
-echo ""
-
-# Clone modified evo update package
-echo "Clone modified evo updater package"
-git clone https://github.com/sapphire-sm6225/packages_apps_Updater.git -b vic packages/apps/Updater
-echo "============================"
-echo "modified evo update package clone success"
+echo "Crave sync success"
 echo "============================"
 echo ""
 
 # Clone HALs for SM6225
 echo "Cloning HALs for SM6225..."
 rm -rf hardware/qcom-caf/common
-git clone --depth 1 -b lineage-22.2 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
+git clone --depth 1 -b lineage-23.2 https://github.com/sapphire-sm6225/android_hardware_qcom-caf_common.git hardware/qcom-caf/common
 
 rm -rf hardware/qcom-caf/sm6225/audio/agm
 git clone --depth 1 -b lineage-22.2-caf-sm6225 https://github.com/sapphire-sm6225/vendor_qcom_opensource_agm.git hardware/qcom-caf/sm6225/audio/agm
@@ -91,9 +70,35 @@ rm -rf hardware/qcom-caf/sm6225/audio/primary-hal
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/hardware_qcom_audio.git hardware/qcom-caf/sm6225/audio/primary-hal
 
 rm -rf device/qcom/sepolicy_vndr/sm6225
-git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
+git clone --depth 1 -b lineage-23.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
+
+rm -rf vendor/qcom/opensource/healthd-ext
+git clone --depth 1 -b lineage-23.2 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_healthd-ext.git vendor/qcom/opensource/healthd-ext
 echo "============================"
 echo "Cloning HALs completed"
+echo "============================"
+echo ""
+
+# Automatic cleanup
+echo "Performing cleanup..."
+rm -rf packages/apps/ThemePicker
+rm -rf vendor/lineage
+echo "Cleanup completed."
+echo ""
+
+# Clone modified lineage ThemePicke repo
+echo "Clone modified lineage ThemePicker repo"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-23.2 packages/apps/ThemePicker
+echo "============================"
+echo "modified lineage ThemePicker repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage vendor
+echo "Clone modified lineage vendor repo"
+git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-23.2 vendor/lineage
+echo "============================"
+echo "modified lineage vendor repo clone success"
 echo "============================"
 echo ""
 
@@ -101,8 +106,8 @@ echo ""
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
 export BUILD_HOSTNAME=T800-machine
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export SKIP_ABI_CHECKS=true
+mkdir -p out/target/product/sapphire/obj/KERNEL_OBJ/usr
 
 # Build the ROM
 breakfast sapphire user
@@ -117,7 +122,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-m evolution
+mka bacon
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."
     exit 1
@@ -129,7 +134,7 @@ echo "============================"
 
 # Upload ROM zip file to PixelDrain
 ROM_DIR="out/target/product/sapphire/"
-ROM_NAME=$(ls $ROM_DIR | grep "EvolutionX-15.0-.*-sapphire-.*-Unofficial.zip$" | tail -n 1)
+ROM_NAME=$(ls $ROM_DIR | grep "ineage-23.2-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1)
 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
