@@ -84,7 +84,6 @@ echo ""
 echo "Performing cleanup..."
 rm -rf packages/apps/ThemePicker
 rm -rf vendor/lineage
-rm -rf packages/modules/Permission
 echo "Cleanup completed."
 echo ""
 
@@ -101,14 +100,6 @@ echo "Clone modified lineage vendor repo"
 git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-23.2 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified lineage Permission
-echo "Clone modified lineage Permission repo"
-git clone https://github.com/sapphire-sm6225/android_packages_modules_Permission.git -b lineage-23.2 packages/modules/Permission
-echo "============================"
-echo "modified lineage permission repo clone success"
 echo "============================"
 echo ""
 
