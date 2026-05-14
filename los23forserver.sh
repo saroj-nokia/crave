@@ -7,6 +7,7 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/ThemePicker
 rm -rf vendor/qcom/opensource/healthd-ext
 rm -rf vendor/lineage
+rm -rf frameworks/base
 echo "Cleanup completed."
 echo ""
 
@@ -83,6 +84,7 @@ echo ""
 echo "Performing cleanup..."
 rm -rf packages/apps/ThemePicker
 rm -rf vendor/lineage
+rm -rf frameworks/base
 echo "Cleanup completed."
 echo ""
 
@@ -99,6 +101,14 @@ echo "Clone modified lineage vendor repo"
 git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-23.2 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage frameworks base
+echo "Clone modified lineage frameworks base repo"
+git clone https://github.com/sapphire-sm6225/android_frameworks_base.git -b lineage-23.2 frameworks/base
+echo "============================"
+echo "modified lineage frameworks base repo clone success"
 echo "============================"
 echo ""
 
