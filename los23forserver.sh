@@ -7,6 +7,7 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/ThemePicker
 rm -rf vendor/qcom/opensource/healthd-ext
 rm -rf vendor/lineage
+rm -rf /packages/apps/GameBar
 echo "Cleanup completed."
 echo ""
 
@@ -79,6 +80,7 @@ echo ""
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf vendor/lineage
+rm -rf /packages/apps/GameBar
 echo "Cleanup completed."
 echo ""
 
