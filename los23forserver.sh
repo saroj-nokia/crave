@@ -90,6 +90,14 @@ echo "modified lineage vendor repo clone success"
 echo "============================"
 echo ""
 
+# Clone gamebar
+echo "Clone gamebar repo"
+git clone https://github.com/kenway214/packages_apps_GameBar.git -b lineage-23.2 /packages/apps/GameBar
+echo "============================"
+echo "Gamebar repo clone success"
+echo "============================"
+echo ""
+
 # Build environment setup
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
