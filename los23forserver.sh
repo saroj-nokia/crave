@@ -80,7 +80,6 @@ echo ""
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf vendor/lineage
-rm -rf /packages/apps/GameBar
 echo "Cleanup completed."
 echo ""
 
@@ -89,14 +88,6 @@ echo "Clone modified lineage vendor repo"
 git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-23.2 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
-echo "============================"
-echo ""
-
-# Clone gamebar
-echo "Clone gamebar repo"
-git clone https://github.com/sapphire-sm6225/packages_apps_GameBar.git -b lineage-23.2 packages/apps/GameBar
-echo "============================"
-echo "Gamebar repo clone success"
 echo "============================"
 echo ""
 
