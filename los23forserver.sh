@@ -94,7 +94,7 @@ echo ""
 
 # Clone gamebar
 echo "Clone gamebar repo"
-git clone https://github.com/kenway214/packages_apps_GameBar.git -b lineage-23.2 packages/apps/GameBar
+git clone https://github.com/sapphire-sm6225/packages_apps_GameBar.git -b lineage-23.2 packages/apps/GameBar
 echo "============================"
 echo "Gamebar repo clone success"
 echo "============================"
