@@ -79,7 +79,6 @@ echo ""
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf vendor/lineage
-rm -rf packages/apps/Backgrounds
 echo "Cleanup completed."
 echo ""
 
