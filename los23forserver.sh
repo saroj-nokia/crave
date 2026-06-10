@@ -7,7 +7,7 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/ThemePicker
 rm -rf vendor/qcom/opensource/healthd-ext
 rm -rf vendor/lineage
-rm -rf /packages/apps/GameBar
+rm -rf packages/apps/Backgrounds
 echo "Cleanup completed."
 echo ""
 
@@ -80,6 +80,7 @@ echo ""
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf vendor/lineage
+rm -rf packages/apps/Backgrounds
 echo "Cleanup completed."
 echo ""
 
@@ -88,6 +89,14 @@ echo "Clone modified lineage vendor repo"
 git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-23.2 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
+echo "============================"
+echo ""
+
+# Clone backgrounds repo
+echo "Clone backgrounds repo"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_Backgrounds -b 16.0 packages/apps/Backgrounds
+echo "============================"
+echo "backgrounds repo clone success"
 echo "============================"
 echo ""
 
