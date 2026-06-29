@@ -4,6 +4,7 @@
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
+rm -rf packages/apps/Launcher3
 rm -rf packages/apps/ThemePicker
 rm -rf vendor/qcom/opensource/healthd-ext
 rm -rf vendor/lineage
@@ -78,8 +79,26 @@ echo ""
 
 # Automatic cleanup
 echo "Performing cleanup..."
+rm -rf packages/apps/Launcher3
+rm -rf packages/apps/ThemePicker
 rm -rf vendor/lineage
 echo "Cleanup completed."
+echo ""
+
+# Clone modified lineage Launcher3 repo
+echo "Clone modified lineage Launcher3 repo"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_Launcher3.git -b lineage-23.2 packages/apps/Launcher3
+echo "============================"
+echo "modified lineage ThemePicker repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage ThemePicke repo
+echo "Clone modified lineage ThemePicker repo"
+git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker.git -b lineage-23.2 packages/apps/ThemePicker
+echo "============================"
+echo "modified lineage ThemePicker repo clone success"
+echo "============================"
 echo ""
 
 # Clone modified lineage vendor
