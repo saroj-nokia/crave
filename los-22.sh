@@ -7,15 +7,13 @@ rm -rf hardware/qcom-caf/common
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
-rm -rf vendor/qcom/opensource/healthd-ext
-rm -rf system/media
-rm -rf hardware/interfaces
 rm -rf vendor/lineage
+rm -rf packages/apps/Trebuchet
 echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -52,15 +50,14 @@ echo "Performing cleanup..."
 rm -rf packages/apps/Updater
 rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
-rm -rf system/media
-rm -rf hardware/interfaces
 rm -rf vendor/lineage
+rm -rf packages/apps/Trebuchet
 echo "Cleanup completed."
 echo ""
 
 # Clone modified lineage updater repo
 echo "Clone modified lineage updater repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
 echo "============================"
 echo "modified lineage updater repo clone success"
 echo "============================"
@@ -68,7 +65,7 @@ echo ""
 
 # Clone modified lineage ThemePicke repo
 echo "Clone modified lineage ThemePicker repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-22.2 packages/apps/ThemePicker
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-22.2 packages/apps/ThemePicker
 echo "============================"
 echo "modified lineage ThemePicker repo clone success"
 echo "============================"
@@ -76,33 +73,25 @@ echo ""
 
 # Clone modified lineage Settings repo
 echo "Clone modified lineage Settings repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
 echo "============================"
 echo "modified lineage Settings repo clone success"
 echo "============================"
 echo ""
 
-# Clone modified no audio ringtone while bluetooth connect repo
-echo "Clone modified no audio ringtone while bluetooth connect repo"
-git clone https://github.com/sapphire-sm6225/android_system_media.git -b lineage-22.2 system/media
-echo "============================"
-echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified no audio ringtone while bluetooth connect repo
-echo "Clone modified no audio ringtone while bluetooth connect repo"
-git clone https://github.com/sapphire-sm6225/android_hardware_interfaces.git -b lineage-22.2 hardware/interfaces
-echo "============================"
-echo "modified lineage no audio ringtone while bluetooth connect repo clone success"
-echo "============================"
-echo ""
-
 # Clone modified lineage vendor
 echo "Clone modified lineage vendor repo"
-git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
+git clone --depth 1 https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage Trebuchet repo
+echo "Clone modified lineage Trebuchet repo"
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Trebuchet -b lineage-22.2 packages/apps/Trebuchet
+echo "============================"
+echo "modified lineage Trebuchet repo clone success"
 echo "============================"
 echo ""
 
@@ -134,9 +123,6 @@ git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm622
 
 rm -rf device/qcom/sepolicy_vndr/sm6225
 git clone --depth 1 -b lineage-22.0-caf-sm6225 https://github.com/sapphire-sm6225/device_qcom_sepolicy_vndr.git device/qcom/sepolicy_vndr/sm6225
-
-rm -rf vendor/qcom/opensource/healthd-ext
-git clone --depth 1 -b lineage-22.2 https://github.com/sapphire-sm6225/android_vendor_qcom_opensource_healthd-ext.git vendor/qcom/opensource/healthd-ext
 echo "============================"
 echo "Cloning HALs completed"
 echo "============================"
