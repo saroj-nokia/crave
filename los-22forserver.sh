@@ -59,7 +59,7 @@ echo ""
 
 # Clone modified lineage updater repo
 echo "Clone modified lineage updater repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Updater -b lineage-22.2 packages/apps/Updater
 echo "============================"
 echo "modified lineage updater repo clone success"
 echo "============================"
@@ -67,7 +67,7 @@ echo ""
 
 # Clone modified lineage ThemePicke repo
 echo "Clone modified lineage ThemePicker repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-22.2 packages/apps/ThemePicker
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_ThemePicker -b lineage-22.2 packages/apps/ThemePicker
 echo "============================"
 echo "modified lineage ThemePicker repo clone success"
 echo "============================"
@@ -75,7 +75,7 @@ echo ""
 
 # Clone modified lineage Settings repo
 echo "Clone modified lineage Settings repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Settings -b lineage-22.2 packages/apps/Settings
 echo "============================"
 echo "modified lineage Settings repo clone success"
 echo "============================"
@@ -83,7 +83,7 @@ echo ""
 
 # Clone modified lineage vendor
 echo "Clone modified lineage vendor repo"
-git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
+git clone --depth 1 https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
 echo "============================"
@@ -91,7 +91,7 @@ echo ""
 
 # Clone modified lineage Trebuchet repo
 echo "Clone modified lineage Trebuchet repo"
-git clone https://github.com/sapphire-sm6225/android_packages_apps_Trebuchet -b lineage-22.2 packages/apps/Trebuchet
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Trebuchet -b lineage-22.2 packages/apps/Trebuchet
 echo "============================"
 echo "modified lineage Trebuchet repo clone success"
 echo "============================"
