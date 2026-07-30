@@ -9,6 +9,7 @@ rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
 rm -rf vendor/lineage
 rm -rf packages/apps/Trebuchet
+rm -rf frameworks/base
 echo "Cleanup completed."
 echo ""
 
@@ -52,6 +53,7 @@ rm -rf packages/apps/ThemePicker
 rm -rf packages/apps/Settings
 rm -rf vendor/lineage
 rm -rf packages/apps/Trebuchet
+rm -rf frameworks/base
 echo "Cleanup completed."
 echo ""
 
@@ -92,6 +94,14 @@ echo "Clone modified lineage Trebuchet repo"
 git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Trebuchet -b lineage-22.2 packages/apps/Trebuchet
 echo "============================"
 echo "modified lineage Trebuchet repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage frameworks base
+echo "Clone modified lineage frameworks base repo"
+git clone --depth 1  https://github.com/sapphire-sm6225/android_frameworks_base.git -b lineage-22.2 frameworks/base
+echo "============================"
+echo "modified lineage frameworks base repo clone success"
 echo "============================"
 echo ""
 
