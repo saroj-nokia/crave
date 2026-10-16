@@ -173,7 +173,7 @@ ROM_NAME=$(ls $ROM_DIR | grep "lineage-22.2-.*-UNOFFICIAL-sapphire.zip$" | tail 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
     echo "Uploading ROM file to PixelDrain..."
-    curl -T "$ROM_PATH" -u :d948712b-edd9-4073-bdbc-b59c3f8a4392 https://pixeldrain.com/api/file/
+    curl -T "$ROM_PATH" -u :b7a53d2a-6992-4851-8f45-fb86d6cc3fbe https://pixeldrain.com/api/file/
     if [ $? -eq 0 ]; then
         echo "ROM uploaded successfully to PixelDrain!"
     else
