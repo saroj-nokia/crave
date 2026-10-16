@@ -10,6 +10,7 @@ rm -rf packages/apps/Settings
 rm -rf vendor/lineage
 rm -rf packages/apps/Trebuchet
 rm -rf frameworks/base
+rm -rf packages/apps/MusicFX
 echo "Cleanup completed."
 echo ""
 
@@ -54,6 +55,7 @@ rm -rf packages/apps/Settings
 rm -rf vendor/lineage
 rm -rf packages/apps/Trebuchet
 rm -rf frameworks/base
+rm -rf packages/apps/MusicFX
 echo "Cleanup completed."
 echo ""
 
@@ -102,6 +104,14 @@ echo "Clone modified lineage frameworks base repo"
 git clone --depth 1  https://github.com/sapphire-sm6225/android_frameworks_base.git -b lineage-22.2 frameworks/base
 echo "============================"
 echo "modified lineage frameworks base repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified MusicFX
+echo "Clone modified MusicFX repo"
+git clone --depth 1  https://github.com/sapphire-sm6225/packages_apps_MusicFX.git -b lineage-22.2 packages/apps/MusicFX
+echo "============================"
+echo "modified MusicFX repo clone success"
 echo "============================"
 echo ""
 
