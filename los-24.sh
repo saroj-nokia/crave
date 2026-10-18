@@ -20,7 +20,7 @@ echo "================="
 echo ""
 
 # Clone local manifests
-git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire16 .repo/local_manifests
+git clone https://github.com/saroj-nokia/local_manifests_sapphire --depth 1 -b sapphire17 .repo/local_manifests
 if [ $? -ne 0 ]; then
     echo "Failed to clone local manifests. Exiting."
     exit 1
