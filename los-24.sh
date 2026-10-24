@@ -5,6 +5,7 @@ echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 rm -rf vendor/lineage
+rm -rf device/lineage/sepolicy
 echo "Cleanup completed."
 echo ""
 
@@ -77,6 +78,7 @@ echo ""
 # Automatic cleanup
 echo "Performing cleanup..."
 rm -rf vendor/lineage
+rm -rf device/lineage/sepolicy
 echo "Cleanup completed."
 echo ""
 
@@ -85,6 +87,14 @@ echo "Clone modified lineage vendor repo"
 git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-24.0 vendor/lineage
 echo "============================"
 echo "modified lineage vendor repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage sepolicy
+echo "Clone modified lineage sepolicy repo"
+git clone https://github.com/sapphire-sm6225/android_device_lineage_sepolicy -b lineage-24.0 device/lineage/sepolicy
+echo "============================"
+echo "modified lineage sepolicy repo clone success"
 echo "============================"
 echo ""
 
