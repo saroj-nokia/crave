@@ -6,6 +6,7 @@ rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
 rm -rf vendor/lineage
 rm -rf device/lineage/sepolicy
+rm -rf packages/apps/Launcher3
 echo "Cleanup completed."
 echo ""
 
@@ -79,6 +80,7 @@ echo ""
 echo "Performing cleanup..."
 rm -rf vendor/lineage
 rm -rf device/lineage/sepolicy
+rm -rf packages/apps/Launcher3
 echo "Cleanup completed."
 echo ""
 
@@ -95,6 +97,14 @@ echo "Clone modified lineage sepolicy repo"
 git clone https://github.com/sapphire-sm6225/android_device_lineage_sepolicy -b lineage-24.0 device/lineage/sepolicy
 echo "============================"
 echo "modified lineage sepolicy repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage Launcher3 repo
+echo "Clone modified lineage Launcher3 repo"
+git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Launcher3 -b lineage-24.0 packages/apps/Launcher3
+echo "============================"
+echo "modified lineage Launcher3 repo clone success"
 echo "============================"
 echo ""
 
