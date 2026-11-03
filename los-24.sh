@@ -8,6 +8,8 @@ rm -rf vendor/lineage
 rm -rf device/lineage/sepolicy
 rm -rf packages/apps/Launcher3
 rm -rf packages/apps/AudioFX
+rm -rf device/xiaomi/miuicamera-sapphire
+rm -rf vendor/xiaomi/miuicamera-sapphire
 echo "Cleanup completed."
 echo ""
 
@@ -83,6 +85,8 @@ rm -rf vendor/lineage
 rm -rf device/lineage/sepolicy
 rm -rf packages/apps/Launcher3
 rm -rf packages/apps/AudioFX
+rm -rf device/xiaomi/miuicamera-sapphire
+rm -rf vendor/xiaomi/miuicamera-sapphire
 echo "Cleanup completed."
 echo ""
 
@@ -115,6 +119,22 @@ echo "Clone modified lineage AudioFX repo"
 git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_AudioFX -b lineage-24.0 packages/apps/AudioFX
 echo "============================"
 echo "modified lineage AudioFX repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified miuicamera repo
+echo "Clone modified lineage AudioFX repo"
+git clone --depth 1 https://github.com/WibuRachSapphireTree/device_xiaomi_miuicamera-sapphire -b lineage-24.0 device/xiaomi/miuicamera-sapphire
+echo "============================"
+echo "modified miuicamera repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified miuicamera repo
+echo "Clone modified lineage AudioFX repo"
+git clone --depth 1 https://github.com/WibuRachSapphireTree/vendor_xiaomi_miuicamera-sapphire -b lineage-24.0 vendor/xiaomi/miuicamera-sapphire
+echo "============================"
+echo "modified miuicamera repo clone success"
 echo "============================"
 echo ""
 
