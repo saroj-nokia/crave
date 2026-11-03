@@ -123,16 +123,16 @@ echo "============================"
 echo ""
 
 # Clone modified miuicamera repo
-echo "Clone modified lineage AudioFX repo"
-git clone --depth 1 https://github.com/WibuRachSapphireTree/device_xiaomi_miuicamera-sapphire -b lineage-24.0 device/xiaomi/miuicamera-sapphire
+echo "Clone modified miuicamera repo"
+git clone --depth 1 https://github.com/sapphire-sm6225/device_xiaomi_miuicamera-sapphire -b lineage-24.0 device/xiaomi/miuicamera-sapphire
 echo "============================"
 echo "modified miuicamera repo clone success"
 echo "============================"
 echo ""
 
 # Clone modified miuicamera repo
-echo "Clone modified lineage AudioFX repo"
-git clone --depth 1 https://github.com/WibuRachSapphireTree/vendor_xiaomi_miuicamera-sapphire -b lineage-24.0 vendor/xiaomi/miuicamera-sapphire
+echo "Clone modified miuicamera repo"
+git clone --depth 1 https://github.com/sapphire-sm6225/vendor_xiaomi_miuicamera-sapphire -b lineage-24.0 vendor/xiaomi/miuicamera-sapphire
 echo "============================"
 echo "modified miuicamera repo clone success"
 echo "============================"
