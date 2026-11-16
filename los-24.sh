@@ -140,7 +140,7 @@ echo "============================"
 
 # Upload ROM zip file to PixelDrain
 ROM_DIR="out/target/product/sapphire/"
-ROM_NAME=$(ls $ROM_DIR | grep "ineage-24.0-.*-UNOFFICIAL-sapphire.zip$" | tail -n 1)
+ROM_NAME=$(ls $ROM_DIR | grep "EvolutionX-17.0-.*-sapphire-.*-Unofficial.zip$" | tail -n 1)
 
 if [ -n "$ROM_NAME" ]; then
     ROM_PATH="$ROM_DIR$ROM_NAME"
