@@ -4,17 +4,14 @@
 echo "Performing cleanup..."
 rm -rf .repo/local_manifests/
 rm -rf hardware/qcom-caf/common
-rm -rf vendor/lineage
 rm -rf device/lineage/sepolicy
-rm -rf packages/apps/Launcher3
-rm -rf packages/apps/AudioFX
 rm -rf device/xiaomi/miuicamera-sapphire
 rm -rf vendor/xiaomi/miuicamera-sapphire
 echo "Cleanup completed."
 echo ""
 
 # Initialize the ROM source repository
-repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
+repo init -u https://github.com/Evolution-X/manifest -b cnb --git-lfs
 if [ $? -ne 0 ]; then
     echo "Repo initialization failed. Exiting."
     exit 1
@@ -81,44 +78,17 @@ echo ""
 
 # Automatic cleanup
 echo "Performing cleanup..."
-rm -rf vendor/lineage
 rm -rf device/lineage/sepolicy
-rm -rf packages/apps/Launcher3
-rm -rf packages/apps/AudioFX
 rm -rf device/xiaomi/miuicamera-sapphire
 rm -rf vendor/xiaomi/miuicamera-sapphire
 echo "Cleanup completed."
 echo ""
 
-# Clone modified lineage vendor
-echo "Clone modified lineage vendor repo"
-git clone https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-24.0 vendor/lineage
-echo "============================"
-echo "modified lineage vendor repo clone success"
-echo "============================"
-echo ""
-
 # Clone modified lineage sepolicy
-echo "Clone modified lineage sepolicy repo"
-git clone https://github.com/sapphire-sm6225/android_device_lineage_sepolicy -b lineage-24.0 device/lineage/sepolicy
+echo "Clone modified evolution sepolicy repo"
+git clone https://github.com/sapphire-sm6225/device_evolution_sepolicy -b cnb device/lineage/sepolicy
 echo "============================"
 echo "modified lineage sepolicy repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified lineage Launcher3 repo
-echo "Clone modified lineage Launcher3 repo"
-git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_Launcher3 -b lineage-24.0 packages/apps/Launcher3
-echo "============================"
-echo "modified lineage Launcher3 repo clone success"
-echo "============================"
-echo ""
-
-# Clone modified lineage AudioFX repo
-echo "Clone modified lineage AudioFX repo"
-git clone --depth 1 https://github.com/sapphire-sm6225/android_packages_apps_AudioFX -b lineage-24.0 packages/apps/AudioFX
-echo "============================"
-echo "modified lineage AudioFX repo clone success"
 echo "============================"
 echo ""
 
@@ -158,7 +128,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-mka bacon
+m evolution
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."
     exit 1
