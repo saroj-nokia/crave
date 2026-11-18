@@ -108,6 +108,15 @@ echo "modified miuicamera repo clone success"
 echo "============================"
 echo ""
 
+# Gapps fux
+echo "Gapps fix"
+cd vendor/gms
+git lfs install
+git lfs pull
+cd ../..
+echo "Gapps fix applied."
+echo ""
+
 # Build environment setup
 source build/envsetup.sh
 export BUILD_USERNAME=sarojtaj77
