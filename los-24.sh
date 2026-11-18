@@ -7,6 +7,7 @@ rm -rf hardware/qcom-caf/common
 rm -rf device/lineage/sepolicy
 rm -rf device/xiaomi/miuicamera-sapphire
 rm -rf vendor/xiaomi/miuicamera-sapphire
+rm -rf vendor/lineage
 echo "Cleanup completed."
 echo ""
 
@@ -81,6 +82,7 @@ echo "Performing cleanup..."
 rm -rf device/lineage/sepolicy
 rm -rf device/xiaomi/miuicamera-sapphire
 rm -rf vendor/xiaomi/miuicamera-sapphire
+rm -rf vendor/lineage
 echo "Cleanup completed."
 echo ""
 
@@ -105,6 +107,14 @@ echo "Clone modified miuicamera repo"
 git clone --depth 1 https://github.com/sapphire-sm6225/vendor_xiaomi_miuicamera-sapphire -b lineage-24.0 vendor/xiaomi/miuicamera-sapphire
 echo "============================"
 echo "modified miuicamera repo clone success"
+echo "============================"
+echo ""
+
+# Clone modified lineage vendor
+echo "Clone modified lineage vendor repo"
+git clone --depth 1 https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
+echo "============================"
+echo "modified lineage vendor repo clone success"
 echo "============================"
 echo ""
 
