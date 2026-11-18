@@ -110,11 +110,11 @@ echo "modified miuicamera repo clone success"
 echo "============================"
 echo ""
 
-# Clone modified lineage vendor
-echo "Clone modified lineage vendor repo"
-git clone --depth 1 https://github.com/sapphire-sm6225/android_vendor_lineage.git -b lineage-22.2 vendor/lineage
+# Clone modified evolution vendor
+echo "Clone modified evolution vendor repo"
+git clone --depth 1 https://github.com/sapphire-sm6225/vendor_evolution.git -b cnb vendor/lineage
 echo "============================"
-echo "modified lineage vendor repo clone success"
+echo "modified evolution vendor repo clone success"
 echo "============================"
 echo ""
 
